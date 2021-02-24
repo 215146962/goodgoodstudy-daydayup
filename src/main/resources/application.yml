@@ -1,14 +1,10 @@
+# 配置profile
 spring:
-    port: 8080
-    redis:
-      host: 127.0.0.1 
-      port: 6379
-      password:   #没有密码的话就设为空
-      jedis:
-        pool:
-          max-active: 8
-          max-wait: -1
-          max-idle: 500
-          min-idle: 0
-      lettuce:
-        shutdown-timeout: 0
+  profiles:
+    active: dev
+  webflux:
+    # 表示所有的访问都要经过静态资源路径（即一个请求过来，先来看静态资源文件是否存在，不存在才到controller）
+#    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,classpath:/templates/
+

@@ -1,0 +1,23 @@
+server:
+  port: 8099
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:   #没有密码的话就设为空
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 500
+        min-idle: 0
+    lettuce:
+      shutdown-timeout: 0
+
+# logback的配置（因为springboot自带，所以不用导包）
+logging:
+  file: D:\workspace\goodgoodstudy-daydayup\log.log
+  level:
+    org:
+      springframework:
+        web: DEBUG
