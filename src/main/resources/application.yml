@@ -13,6 +13,8 @@ spring:
     prefix: classpath:/templates/  # 页面映射路径
     suffix: .html # 试图后的后缀
     mode: HTML5 # 模板模式
+  freemarker:
+    suffix: .ftl
   profiles:
     active: dev
   webflux:

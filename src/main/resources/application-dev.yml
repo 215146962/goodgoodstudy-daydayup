@@ -16,7 +16,7 @@ spring:
 
 # logback的配置（因为springboot自带，所以不用导包）
 logging:
-  file: D:\workspace\goodgoodstudy-daydayup\log.log
+  file: D:\workspace\goodgoodstudy-daydayup\log\log.log
   level:
     org:
       springframework:
