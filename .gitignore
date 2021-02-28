@@ -29,5 +29,6 @@ build/
 
 ### VS Code ###
 .vscode/
-/log.log.2021-02-23.0.gz
+/log.log.*
 /log.log
+

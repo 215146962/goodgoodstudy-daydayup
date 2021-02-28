@@ -1,9 +1,22 @@
 # 配置profile
 spring:
+  servlet:
+    multipart:
+      enabled: true
+      #设置单个文件上传大小
+      max-file-size: 200MB
+      #设置一次上传文件总的大小
+      max-request-size: 200MB
+  thymeleaf:
+    cache: false # 关闭页面缓存
+    encoding: UTF-8 # 模板编码
+    prefix: classpath:/templates/  # 页面映射路径
+    suffix: .html # 试图后的后缀
+    mode: HTML5 # 模板模式
   profiles:
     active: dev
   webflux:
-    # 表示所有的访问都要经过静态资源路径（即一个请求过来，先来看静态资源文件是否存在，不存在才到controller）
+    # 表示所有的访问都要经过静态资源路径
 #    static-path-pattern: /**
   resources:
     static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,classpath:/templates/
