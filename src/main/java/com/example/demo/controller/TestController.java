@@ -6,10 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.ResourceUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -125,7 +122,27 @@ public class TestController {
                 e.printStackTrace();
             }
         }
+    }
 
+    /**
+     * 专门用于触发空指针异常
+     */
+    @GetMapping("triggerNullPointerException")
+    public void triggerNullPointerException(){
+        String str = null;
+        str.length();
+    }
+
+    /**
+     * 专门捕获当前Controller的空指针异常
+     * @param e
+     * @return
+     */
+    @ExceptionHandler(value = {NullPointerException.class})
+    public String nullPointerException(Exception e,Model model){
+        System.out.println("---------" + e.toString());
+        model.addAttribute("msg",e.toString());
+        return "error";
     }
 
 }
