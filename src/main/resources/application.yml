@@ -23,3 +23,8 @@ spring:
   resources:
     static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,classpath:/templates/
 
+mybatis:
+  # mybatis的package别名
+#  type-aliases-package: com.example.demo.entity
+  # 指定mybatis的映射文件路径
+  mapper-locations: classpath:mapper/*.xml

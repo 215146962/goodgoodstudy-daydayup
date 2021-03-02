@@ -34,12 +34,12 @@ public class TestController {
     @GetMapping("openFreemarkerWeb")
     public String openFreemarkerWeb(Model model){
         List<User> list = new ArrayList<User>();
-        list.add(new User(1L,"张一",1));
-        list.add(new User(2L,"张二",2));
-        list.add(new User(3L,"张三",3));
-        list.add(new User(4L,"张四",4));
-        list.add(new User(5L,"张五",5));
-        list.add(new User(6L,"张六",6));
+        list.add(new User(1L,"张一",1,"张一"));
+        list.add(new User(2L,"张二",2,"张二"));
+        list.add(new User(3L,"张三",3,"张三"));
+        list.add(new User(4L,"张四",4,"张四"));
+        list.add(new User(5L,"张五",5,"张五"));
+        list.add(new User(6L,"张六",6,"张六"));
         model.addAttribute("list",list);
 
         return "freemarkerDemo";
@@ -133,16 +133,6 @@ public class TestController {
         str.length();
     }
 
-    /**
-     * 专门捕获当前Controller的空指针异常
-     * @param e
-     * @return
-     */
-    @ExceptionHandler(value = {NullPointerException.class})
-    public String nullPointerException(Exception e,Model model){
-        System.out.println("---------" + e.toString());
-        model.addAttribute("msg",e.toString());
-        return "error";
-    }
+
 
 }
