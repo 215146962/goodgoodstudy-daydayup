@@ -9,4 +9,8 @@
     <select id="query" resultType="com.example.demo.entity.User">
         select * from tip_user_info
     </select>
+
+    <insert id="insertUser" parameterType="com.example.demo.entity.User">
+        insert into tip_user_info (username,name,age) values(#{username},#{name},#{age})
+    </insert>
 </mapper>

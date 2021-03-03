@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface IMybatisService {
     public List<User> getUserListByUser(User user);
+
+    public void insertUser(User user);
 }

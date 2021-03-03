@@ -19,4 +19,10 @@ public class MybatisService implements IMybatisService {
         return userList;
     }
 
+    @Override
+    public void insertUser(User user) {
+        userMapper.insertUser(user);
+    }
+
+
 }

@@ -21,7 +21,7 @@ import java.util.List;
 @RequestMapping("test")
 public class TestController {
 
-    @RequestMapping("hello")
+    @GetMapping("hello")
     @ResponseBody
     public String hello(){
         return "Do you like van♂ 游戏？";

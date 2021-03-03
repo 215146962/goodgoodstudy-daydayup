@@ -5,6 +5,7 @@ import com.example.demo.service.IMybatisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -25,6 +26,10 @@ public class MybatisController {
         return mybatisService.getUserListByUser(user);
     }
 
-
+    @PostMapping("insertUser")
+    @ResponseBody
+    public void insertUser(User user){
+        mybatisService.insertUser(user);
+    }
 
 }
