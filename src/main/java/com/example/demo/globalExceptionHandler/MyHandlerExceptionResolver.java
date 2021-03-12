@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  * 自定义的全局异常
  * 只要实现一个接口方法即可
  */
-@Component
+//@Component
 public class MyHandlerExceptionResolver implements HandlerExceptionResolver {
 
     @Override
