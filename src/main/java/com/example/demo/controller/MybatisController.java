@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-@RequestMapping("mybatis")
+@RequestMapping("/mybatis")
 public class MybatisController {
 
     @Autowired
     private IMybatisService mybatisService;
 
-    @GetMapping("getUserListByUser")
+    @GetMapping("/getUserListByUser")
     @ResponseBody
     public List<User> getUserListByUser(){
         User user = new User();
@@ -26,7 +26,7 @@ public class MybatisController {
         return mybatisService.getUserListByUser(user);
     }
 
-    @PostMapping("insertUser")
+    @PostMapping("/insertUser")
     @ResponseBody
     public void insertUser(User user){
         mybatisService.insertUser(user);

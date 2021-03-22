@@ -18,10 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("test")
+@RequestMapping("/test")
 public class TestController {
 
-    @GetMapping("hello")
+    @GetMapping("/hello")
     @ResponseBody
     public String hello(){
         return "Do you like van♂ 游戏？";
@@ -31,7 +31,7 @@ public class TestController {
      * 打开演示freemarker模板的页面
      * @return
      */
-    @GetMapping("openFreemarkerWeb")
+    @GetMapping("/openFreemarkerWeb")
     public String openFreemarkerWeb(Model model){
         List<User> list = new ArrayList<User>();
         list.add(new User(1L,"张一",1,"张一"));
@@ -45,7 +45,7 @@ public class TestController {
         return "freemarkerDemo";
     }
 
-    @GetMapping("openUploadModelAndView")
+    @GetMapping("/openUploadModelAndView")
     public ModelAndView openUploadModelAndView(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("fileUpload");
@@ -53,12 +53,12 @@ public class TestController {
         return modelAndView;
     }
 
-    @GetMapping("openUploadWeb")
+    @GetMapping("/openUploadWeb")
     public String openUploadWeb(){
         return "fileUpload";
     }
 
-    @PostMapping("upload")
+    @PostMapping("/upload")
     @ResponseBody
     public String upload(MultipartFile upload,String username){
         System.out.println("----账号：" + username);
@@ -71,7 +71,7 @@ public class TestController {
      * 获取项目的各个路径
      * @return
      */
-    @GetMapping("getPath")
+    @GetMapping("/getPath")
     @ResponseBody
     public void getPath() throws FileNotFoundException {
         System.out.println("类加载器路径ClassUtils：" + ClassUtils.getDefaultClassLoader().getResource("").getPath()); // /D:/workspace/goodgoodstudy-daydayup/target/classes/
@@ -85,7 +85,7 @@ public class TestController {
      * @param request
      * @param response
      */
-    @GetMapping("downloadLog")
+    @GetMapping("/downloadLog")
     public void downloadLog(HttpServletRequest request, HttpServletResponse response){
         File file = new File(PathUtils.getResourceBasePath() + "/log/log.log");
         // 设置响应头和客户端保存的文件名
@@ -127,7 +127,7 @@ public class TestController {
     /**
      * 专门用于触发空指针异常
      */
-    @GetMapping("triggerNullPointerException")
+    @GetMapping("/triggerNullPointerException")
     public void triggerNullPointerException(){
         String str = null;
         str.length();
